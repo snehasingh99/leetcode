@@ -1,0 +1,13 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        count = []
+        for i in nums:
+            if (i not in count):
+                count.append(i)
+            else:
+                count.remove(i)
+        
+        return count.pop()
+                
+                  
+        
