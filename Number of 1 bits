@@ -1,0 +1,10 @@
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        count = 0 
+        str = "{0:032b}".format(n) 
+        str = list(str)
+        for i in str:
+            if(i == '1'):
+                count += 1
+        
+        return count
