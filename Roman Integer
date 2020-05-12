@@ -1,0 +1,37 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        I = 1
+        V = 5
+        X = 10
+        L = 50
+        C = 100
+        D = 500
+        M = 1000
+        nums = []
+        tots = 0
+        l = list(s)
+        
+        for j in l:
+            
+            if(j == 'I'):
+                nums.append(1)
+            elif(j == 'V'):
+                nums.append(5)
+            elif(j == 'X'):
+                nums.append(10)
+            elif(j == 'L'):
+                nums.append(50)
+            elif(j == 'C'):
+                nums.append(100)
+            elif(j == 'D'):
+                nums.append(500)
+            elif(j == 'M'):
+                nums.append(1000)
+        for j in range(1, len(nums)):
+            if(nums[j-1] < nums[j]):
+                tots -= nums[j-1]
+            else:
+                tots += nums[j-1]
+            
+        tots += nums[-1]
+        return tots
