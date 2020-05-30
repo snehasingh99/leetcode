@@ -1,0 +1,27 @@
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        if not matrix:
+            return []
+        rb = 0 
+        re = len(matrix)
+        cb = 0
+        ce = len(matrix[0])
+        res = []
+        while re > rb and ce > cb:
+            for i in range(cb , ce):
+                res.append(matrix[rb][i])
+            for j in range(rb + 1, re - 1):
+                res.append(matrix[j][ce - 1])
+            if re != rb + 1:
+                for i in range(ce - 1, cb - 1, -1):
+                    res.append(matrix[re -1][i])
+            if cb != ce - 1:
+                for j in range(re-2, rb, -1):
+                    res.append(matrix[j][cb])
+                    
+            rb  += 1
+            re -= 1
+            cb += 1
+            ce -= 1
+        
+        return res
