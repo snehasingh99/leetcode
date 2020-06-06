@@ -1,3 +1,3 @@
 # leetcode
-Solutions of top interview questions on leetcode(easy level for now)
+Solutions of top interview questions on leetcode(easy level and medium level for now)
 will be updating more....
