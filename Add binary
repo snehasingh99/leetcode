@@ -1,0 +1,33 @@
+class Solution:
+    def BinToDec(self, a: str, b: str) -> str:
+        a = int(a)
+        b = int(b)        
+        l = []
+        l.append(a)
+        l.append(b)
+        k = []
+        for i in l:
+            base = 1
+            dec_value = 0
+            num = i
+            temp = num
+            while(temp):
+                last_digit = temp % 10
+                temp = int(temp//10)
+                dec_value += last_digit * base
+                base = base * 2
+            k.append(dec_value)
+        a = sum(k)
+        b = self.DecToBin(a)
+        return b  
+    
+    def DecToBin(self, a: int) -> str:
+        return (bin(a).replace("0b", ""))
+
+    def addBinary(self, a: str, b: str) -> str:
+        n = self.BinToDec(a, b)
+        return n
+        
+    
+                
+            
