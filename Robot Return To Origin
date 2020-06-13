@@ -1,0 +1,23 @@
+class Solution:
+    def judgeCircle(self, moves: str) -> bool:
+        R = 1
+        L = -1
+        U = 2
+        D = -2
+        s = list(moves)
+        l = []
+        for i in s:
+            if(i == 'U'):
+                l.append(U)
+            elif(i == 'D'):
+                l.append(D)
+            elif(i == 'L'):
+                l.append(L)
+            else:
+                l.append(R)
+        a = sum(l)       
+        if(a == 0):
+            return True
+        else:
+            return False
+        
