@@ -1,0 +1,13 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        A = list(s)
+        B = list(t)
+        a = collections.Counter(B)
+        
+        for i in A:
+            if i in a:
+                a[i] -= 1
+        x = max(a, key = a.get)
+        return x
+        
+        
