@@ -1,0 +1,18 @@
+class Solution:
+    def multiply(self, num1: str, num2: str) -> str:
+        
+        def convert(num1, num2):
+            l = []
+            number = 0
+            for i in num1:
+                number = number * 10 + (ord(i) - 48)
+            number1 = number
+            number = 0
+            for i in num2:
+                number = number * 10 + (ord(i) - 48)
+            number2 = number
+            return number1, number2
+        
+        a , b = convert(num1, num2)
+        return str(a * b)
+        
