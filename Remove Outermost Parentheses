@@ -1,0 +1,23 @@
+class Solution:
+    def removeOuterParentheses(self, S: str) -> str:
+        i, j = 0, 0
+        
+        open_balance = 0
+        out = ""
+        n = len(S)
+        
+        while j < n :
+            
+            if S[j] == '(':
+                open_balance += 1
+                
+            else:
+                open_balance -= 1
+                if open_balance == 0:
+                    out += S[i+1:j]
+                    j += 1
+                    i = j
+                    continue
+            j += 1
+                    
+        return out
