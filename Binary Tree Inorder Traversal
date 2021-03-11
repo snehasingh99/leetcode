@@ -1,0 +1,35 @@
+#Iterative
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        ans  = []
+        stack = []
+        
+        if not root:
+            return stack
+        while root or stack:
+            if root:
+                stack.append(root)
+                root = root.left
+            else:
+                if not stack:
+                    break
+                x=stack.pop()
+                ans.append(x.val)
+                root = x.right
+        return ans
+       
+#Recursive
+
+class Solution:
+    def __init__(self):
+        self.return_list = []
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        if root:
+            self.inorderTraversal(root.left)
+            
+            self.return_list.append(root.val)
+            
+            self.inorderTraversal(root.right)
+            
+        return self.return_list
